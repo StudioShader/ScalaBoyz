@@ -1,5 +1,5 @@
-[warn] scala-library-2.13.5-sources.jar no longer exists at /C:/Users/Анастасия/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.5/scala-library-2.13.5-sources.jar
+[warn] scala-library-2.13.5-sources.jar no longer exists at \home\margarita\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.5\scala-library-2.13.5-sources.jar
 [debug] "not up to date. inChanged = false, force = false
-[debug] Updating ProjectRef(uri("file:/home/margarita/IdeaProjects/ScalaBoyz/demo/"), "library")...
-[debug] Done updating ProjectRef(uri("file:/home/margarita/IdeaProjects/ScalaBoyz/demo/"), "library")
+[debug] Updating ProjectRef(uri("file:/C:/Users/Анастасия/IdeaProjects/ScalaSpbsu21/ScalaSpbsu21/ScalaBoyz/demo/"), "library")...
+[debug] Done updating ProjectRef(uri("file:/C:/Users/Анастасия/IdeaProjects/ScalaSpbsu21/ScalaSpbsu21/ScalaBoyz/demo/"), "library")
 [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
