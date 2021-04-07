@@ -52,4 +52,6 @@ jobs:
       with:
         java-version: "adopt@1.8"
     - name: Build and Test
-      run: sbt -v -Dfile.encoding=UTF-8 +test
+      run: |
+        /home/runner/bin/sbt -sbt-create
+        sbt -v -Dfile.encoding=UTF-8 +test
