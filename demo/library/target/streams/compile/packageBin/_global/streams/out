@@ -1,0 +1,11 @@
+[debug] Packaging C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\library\target\scala-2.13\library_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	org
+[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\library\target\scala-2.13\classes\org
+[debug] 	org\myapp
+[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\library\target\scala-2.13\classes\org\myapp
+[debug] 	org\myapp\MyLibraryProvider$.class
+[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\library\target\scala-2.13\classes\org\myapp\MyLibraryProvider$.class
+[debug] 	org\myapp\MyLibraryProvider.class
+[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\library\target\scala-2.13\classes\org\myapp\MyLibraryProvider.class
+[debug] Done packaging.
