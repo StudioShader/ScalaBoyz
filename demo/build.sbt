@@ -5,6 +5,7 @@ scalaVersion in Global := "2.13.5"
 /*
   root project
   - aggregation
+  change
  */
 
 lazy val root = project.in(file("."))
