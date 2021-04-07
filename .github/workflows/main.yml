@@ -32,4 +32,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Check pwd
         run: pwd
-          
+        
+      - name: Tests directory
+        run: cd demo/library/src/test/scala/org/myapp
+
+        
+      - name: Tests directory1
+        run: ls
