@@ -44,6 +44,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      # define Java options for both official sbt and sbt-extras
+      JAVA_OPTS: -Xms2048M -Xmx2048M -Xss6M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
+      JVM_OPTS:  -Xms2048M -Xmx2048M -Xss6M -XX:ReservedCodeCacheSize=256M -Dfile.encoding=UTF-8
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -52,6 +56,4 @@ jobs:
       with:
         java-version: "adopt@1.8"
     - name: Build and Test
-      run: |
-        /home/runner/bin/sbt -sbt-create
-        sbt -v -Dfile.encoding=UTF-8 +test
+      run: sbt -v +test
