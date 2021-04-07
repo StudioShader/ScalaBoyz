@@ -1,4 +1,4 @@
 [debug] "not up to date. inChanged = false, force = false
-[debug] Updating ProjectRef(uri("file:/C:/Users/Анастасия/IdeaProjects/ScalaSpbsu21/ScalaSpbsu21/ScalaBoyz_/demo/"), "app")...
-[debug] Done updating ProjectRef(uri("file:/C:/Users/Анастасия/IdeaProjects/ScalaSpbsu21/ScalaSpbsu21/ScalaBoyz_/demo/"), "app")
+[debug] Updating ProjectRef(uri("file:/home/margarita/IdeaProjects/ScalaBoyz/demo/"), "app")...
+[debug] Done updating ProjectRef(uri("file:/home/margarita/IdeaProjects/ScalaBoyz/demo/"), "app")
 [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
