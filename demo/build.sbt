@@ -1,4 +1,3 @@
-
 version in Global := "0.1"
 
 scalaVersion in Global := "2.13.5"
@@ -24,7 +23,8 @@ lazy val root = project.in(file("."))
 lazy val library = project.in(file("library"))
   .settings(
     crossScalaVersions += "2.12.12",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.5" % Test
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.5" % Test,
+    libraryDependencies += "org.augustjune" %% "canoe" % "0.5.1",
   )
 /* app project
   - set main class

@@ -1,11 +1,1 @@
-[debug] Packaging C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\app\target\scala-2.13\app_2.13-0.1.jar ...
-[debug] Input file mappings:
-[debug] 	org
-[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\app\target\scala-2.13\classes\org
-[debug] 	org\myapp
-[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\app\target\scala-2.13\classes\org\myapp
-[debug] 	org\myapp\MyMainApp$.class
-[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\app\target\scala-2.13\classes\org\myapp\MyMainApp$.class
-[debug] 	org\myapp\MyMainApp.class
-[debug] 	  C:\Users\Анастасия\IdeaProjects\ScalaSpbsu21\ScalaSpbsu21\bot\08\demo\app\target\scala-2.13\classes\org\myapp\MyMainApp.class
-[debug] Done packaging.
+[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: /home/margarita/IdeaProjects/ScalaBoyz/demo/app/target/scala-2.13/app_2.13-0.1.jar[0m
