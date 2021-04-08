@@ -37,5 +37,6 @@ lazy val library = project.in(file("library"))
 lazy val app = project.in(file("app"))
   .dependsOn(library)
   .settings(
-    Compile / run / mainClass := Some("org.myapp.MyMainApp")
+    Compile / run / mainClass := Some("org.myapp.MyMainApp"),
+    mainClass in assembly := Some("org.myapp.MyMainApp")
   )
