@@ -18,4 +18,4 @@ jobs:
     - name: Build and Test
       run: sbt -v +test
     - name: Validate code with scalafix
-      run: sbt "scalafixAll --check"
+      run: sbt "scalafix --check --rules RemoveUnused NoAutoTupling NoValInForComprehension DisableSyntax ProcedureSyntax LeakingImplicitClassVal"
