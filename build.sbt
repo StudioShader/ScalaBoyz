@@ -11,4 +11,14 @@ lazy val root = project.in(file("."))
     Compile / run / mainClass := Some("org.myapp.MyMainApp"),
     mainClass in assembly := Some("org.myapp.MyMainApp")
   )
+scalacOptions ++= Seq (
+  "-Ywarn-unused"
+)
 
+inThisBuild(
+  List(
+    scalaVersion := "2.13.5",
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision
+  )
+)
