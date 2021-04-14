@@ -3,7 +3,6 @@ package org.myapp
 import canoe.api._
 import canoe.syntax._
 import cats.effect.{ExitCode, IO, IOApp}
-import cats.syntax.functor._
 import fs2.Stream
 
 object MyMainApp extends IOApp {
