@@ -17,3 +17,5 @@ jobs:
         java-version: "adopt@1.8"
     - name: Build and Test
       run: sbt -v +test
+    - name: Validate code with scalafix
+      run: sbt "scalafixAll --check"
