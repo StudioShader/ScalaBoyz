@@ -3,12 +3,24 @@ package org.myapp
 import canoe.api._
 import canoe.syntax._
 import cats.effect.{ExitCode, IO, IOApp}
+import cats.syntax.functor._
 import fs2.Stream
+
+import java.time.{LocalDate, Month}
 
 object MyMainApp extends IOApp {
 
     override def main(args: Array[String]): Unit = {
         println("Hello")
+        val event1 = Event(DateTime(LocalDate.of(2004, Month.MAY, 5)), "1")
+        val event2 = Event(DateTime(LocalDate.of(2004, Month.MAY, 5)), "2")
+        val event3 = Event(DateTime(LocalDate.of(2007, Month.MAY, 5)), "3")
+        val event4 = Event(DateTime(LocalDate.of(2002, Month.MAY, 5)), "4")
+        Calendar.listOfEvents += event1
+        Calendar.listOfEvents += event2
+        Calendar.listOfEvents += event3
+        Calendar.listOfEvents += event4
+        println(Calendar.listOfEvents)
     }
 
     //далее какой-то код-пример
