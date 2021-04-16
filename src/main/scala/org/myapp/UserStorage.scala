@@ -1,6 +1,6 @@
 package org.myapp
 
-import cats.Foldable
+//import cats.Foldable
 
 trait UserStorage[F[_], UserId] {
   val heap: F[User]

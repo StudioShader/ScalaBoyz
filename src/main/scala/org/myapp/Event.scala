@@ -1,7 +1,7 @@
 package org.myapp
 
 
-import java.util.Calendar
+//import java.util.Calendar
 //import scalatime._
 
 case class Event(var date: DateTime,
