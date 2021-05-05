@@ -5,10 +5,15 @@ import canoe.syntax._
 import cats.effect.{ExitCode, IO, IOApp}
 import fs2.Stream
 
+import java.time.LocalDate
+
 object MyMainApp extends IOApp {
 
     override def main(args: Array[String]): Unit = {
         println("Hello")
+        val hashMap: ConcurrentHashMapEventStorage = new ConcurrentHashMapEventStorage
+        hashMap.addEvent(Event(LocalDate.now(),"present"))
+        println(hashMap.getEventsByDate(LocalDate.now()))
     }
 
     //далее какой-то код-пример

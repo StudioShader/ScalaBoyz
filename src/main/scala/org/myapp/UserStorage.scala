@@ -1,10 +1,8 @@
 package org.myapp
 
-//import cats.Foldable
-
 trait UserStorage[F[_], UserId] {
 
-  def getEvent(id: UserId): User
+  def getUser(id: UserId): User
 
   def addUser(id: UserId, user: User): Unit
 
