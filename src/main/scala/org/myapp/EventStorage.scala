@@ -4,10 +4,10 @@ import java.time.LocalDate
 
 trait EventStorage[F[_]] {
 
-  def getEventsByDate(date: LocalDate): List[Event]
+  def getEventsByDate(date: LocalDate): F[List[Event]]
 
-  def addEvent(event: Event): Unit
+  def addEvent(event: Event): F[Unit]
 
-  def updateEvent(event: Event): Unit
+  def updateEvent(event: Event): F[Unit]
 
 }

@@ -6,18 +6,20 @@ import cats.effect.{ExitCode, IO, IOApp}
 import fs2.Stream
 
 import java.time.LocalDate
+import scala.concurrent.Future
+import cats.implicits._
 
 object MyMainApp extends IOApp {
-
+    import scala.concurrent.ExecutionContext.Implicits.global
     override def main(args: Array[String]): Unit = {
         println("Hello")
-        val hashMap: ConcurrentHashMapEventStorage = new ConcurrentHashMapEventStorage
+        val hashMap = new ConcurrentHashMapEventStorage[IO]
         hashMap.addEvent(Event(LocalDate.now(),"present"))
         println(hashMap.getEventsByDate(LocalDate.now()))
     }
 
     //далее какой-то код-пример
-
+    //java concurrent list
     /**
      * URL to which Telegram updates will be sent.
      * This address must be reachable for the Telegram, so in case you're using local environment
