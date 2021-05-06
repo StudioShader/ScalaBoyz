@@ -1,12 +1,11 @@
 package org.myapp
 
-import cats.Monad
 import cats.effect.Sync
 
 import java.time.LocalDate
 import java.util.concurrent.ConcurrentHashMap
 
-class ConcurrentHashMapEventStorage[F[_]: Sync] extends EventStorage[F] {
+class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
 
   val hashMap: ConcurrentHashMap[Int, Event] = new ConcurrentHashMap[Int, Event]()
 
@@ -35,7 +34,7 @@ class ConcurrentHashMapEventStorage[F[_]: Sync] extends EventStorage[F] {
     }
   }
 
-  override def updateEvent(event: Event): F[Unit] = Sync[F].pure{
+  override def updateEvent(event: Event): F[Unit] = Sync[F].pure {
     hashMap.replace(event.id.get, event)
   }
 }
