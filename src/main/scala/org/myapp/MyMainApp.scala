@@ -14,7 +14,6 @@ object MyMainApp extends IOApp {
 
 
   //далее какой-то код-пример
-  //java concurrent list
   /**
    * URL to which Telegram updates will be sent.
    * This address must be reachable for the Telegram, so in case you're using local environment
