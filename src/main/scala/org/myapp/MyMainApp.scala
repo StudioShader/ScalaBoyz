@@ -13,10 +13,8 @@ object MyMainApp extends IOApp {
   //import scala.concurrent.ExecutionContext.Implicits.global
   override def main(args: Array[String]): Unit = {
     println("Hello")
-    val hashMap = new ConcurrentHashMapEventStorage[IO]
-    hashMap.addEvent(Event(LocalDate.now(), "present"))
-    println(hashMap.getEventsByDate(LocalDate.now()))
   }
+
 
   //далее какой-то код-пример
   //java concurrent list
