@@ -8,6 +8,7 @@ trait EventStorage[F[_]] {
 
   def addEvent(event: Event): F[Unit]
 
-  def updateEvent(event: Event): F[Unit]
+  def updateEvent(id: Int, event: Event): F[Unit]
+
 
 }

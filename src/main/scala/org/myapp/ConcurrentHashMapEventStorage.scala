@@ -23,6 +23,8 @@ class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
     result
   }
 
+
+
   override def addEvent(event: Event): F[Unit] = Sync[F].pure {
     event.id match {
       case None =>
@@ -34,7 +36,9 @@ class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
     }
   }
 
-  override def updateEvent(event: Event): F[Unit] = Sync[F].pure {
-    hashMap.replace(event.id.get, event)
+  override def updateEvent(id: Int, event: Event): F[Unit] = Sync[F].pure {
+    event.id = Some(id)
+    hashMap.replace(id, hashMap.get(id), event)
+
   }
 }
