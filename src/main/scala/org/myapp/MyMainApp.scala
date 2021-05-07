@@ -5,12 +5,9 @@ import canoe.syntax._
 import cats.effect.{ExitCode, IO, IOApp}
 import fs2.Stream
 
-import java.time.LocalDate
-//import scala.concurrent.Future
-//import cats.implicits._
 
 object MyMainApp extends IOApp {
-  //import scala.concurrent.ExecutionContext.Implicits.global
+
   override def main(args: Array[String]): Unit = {
     println("Hello")
   }
