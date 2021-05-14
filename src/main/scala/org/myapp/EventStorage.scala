@@ -1,6 +1,7 @@
 package org.myapp
 
 import java.time.LocalDate
+import java.util.concurrent.atomic.AtomicLong
 
 trait EventStorage[F[_]] {
 
@@ -8,7 +9,7 @@ trait EventStorage[F[_]] {
 
   def addEvent(event: Event): F[Unit]
 
-  def updateEvent(id: Int, event: Event): F[Unit]
+  def updateEvent(id: AtomicLong, event: Event): F[Unit]
 
 
 }

@@ -4,12 +4,13 @@ import cats.effect.Sync
 
 import java.time.LocalDate
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.atomic.AtomicLong
 
 class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
 
-  val hashMap: ConcurrentHashMap[Int, Event] = new ConcurrentHashMap[Int, Event]()
+  val hashMap: ConcurrentHashMap[AtomicLong, Event] = new ConcurrentHashMap[AtomicLong, Event]()
 
-  var nextId: Int = 1
+  var nextId: AtomicLong = new AtomicLong(1)
 
   override def getEventsByDate(date: LocalDate): F[List[Event]] = Sync[F].pure {
     var result: List[Event] = List.empty
@@ -24,23 +25,18 @@ class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
   }
 
 
-
   override def addEvent(event: Event): F[Unit] = Sync[F].pure {
     event.id match {
       case None =>
         event.id = Some(nextId)
-        nextId += 1
-        hashMap.put(nextId - 1, event)
-      case a: Option[Int] =>
+        hashMap.put(nextId, event)
+        nextId.addAndGet(1)
+      case a: Option[AtomicLong] =>
         hashMap.put(a.get, event)
     }
   }
 
-  override def updateEvent(id: Int, event: Event): F[Unit] = Sync[F].pure {
-    if (id >= nextId) {
-      throw new NoSuchElementException("no element with such index")
-    }
-
+  override def updateEvent(id: AtomicLong, event: Event): F[Unit] = Sync[F].pure {
     event.id = Some(id)
     hashMap.replace(id, hashMap.get(id), event)
 
