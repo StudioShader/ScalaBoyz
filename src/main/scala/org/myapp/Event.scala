@@ -5,4 +5,4 @@ import java.time.LocalDate
 case class Event(date: LocalDate,
                  name: String,
                  notificationTime: LocalDate = LocalDate.now(),
-                 id: Option[Int] = Some(1)) {}
+                 id: Option[Int] = None) {}
