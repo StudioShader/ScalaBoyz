@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicLong
 
 class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
 
-  val hashMap: ConcurrentHashMap[AtomicLong, Event] = new ConcurrentHashMap[AtomicLong, Event]()
+  val hashMap: ConcurrentHashMap[Int, Event] = new ConcurrentHashMap[Int, Event]()
 
-  var nextId: AtomicLong = new AtomicLong(1)
+  val nextId: AtomicLong = new AtomicLong(1)
 
   override def getEventsByDate(date: LocalDate): F[List[Event]] = Sync[F].pure {
     var result: List[Event] = List.empty
@@ -28,17 +28,15 @@ class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
   override def addEvent(event: Event): F[Unit] = Sync[F].pure {
     event.id match {
       case None =>
-        event.id = Some(nextId)
-        hashMap.put(nextId, event)
+        hashMap.put(nextId.get().toInt, Event(event.date, event.name, event.notificationTime, Some(nextId.get().toInt)))
         nextId.addAndGet(1)
-      case a: Option[AtomicLong] =>
+      case a: Option[Int] =>
         hashMap.put(a.get, event)
     }
   }
 
-  override def updateEvent(id: AtomicLong, event: Event): F[Unit] = Sync[F].pure {
-    event.id = Some(id)
-    hashMap.replace(id, hashMap.get(id), event)
+  override def updateEvent(id: Int, event: Event): F[Unit] = Sync[F].pure {
+    hashMap.replace(id, hashMap.get(id), Event(event.date, event.name, event.notificationTime, Some(id)))
 
   }
 }

@@ -25,8 +25,8 @@ class Test extends funsuite.AnyFunSuite with Matchers {
 //    assert(hashMap.hashMap.get(1) == Event(LocalDate.now(), "present", LocalDate.now()))
 //
 //    assert(hashMap.hashMap.containsKey(3))
-//    assert(hashMap.hashMap.containsValue(Event(LocalDate.of(1724, 1, 28), "SPbSU", LocalDate.now(), Some(new AtomicLong(3)))))
-//    assert(hashMap.hashMap.get(3) == Event(LocalDate.of(1724, 1, 28), "SPbSU", LocalDate.now(), Some(new AtomicLong(3))))
+//    assert(hashMap.hashMap.containsValue(Event(LocalDate.of(1724, 1, 28), "SPbSU", LocalDate.now(), Some(3))))
+//    assert(hashMap.hashMap.get(3) == Event(LocalDate.of(1724, 1, 28), "SPbSU", LocalDate.now(), Some(3)))
 //
 //  }
 //  test("getEventsByDate works correctly") {
@@ -41,13 +41,13 @@ class Test extends funsuite.AnyFunSuite with Matchers {
 //  }
 //
 //  test("updateEvent works correctly") {
-//    hashMap.updateEvent(new AtomicLong(1), Event(LocalDate.now(), "newLife"))
+//    hashMap.updateEvent(1, Event(LocalDate.now(), "newLife"))
 //    assert(hashMap.hashMap.get(1) == Event(LocalDate.now(), "newLife", LocalDate.now()))
 //
-//    assert(hashMap.hashMap.get(2) == Event(LocalDate.now(), "newDay", LocalDate.now(), Some(new AtomicLong(2))))
+//    assert(hashMap.hashMap.get(2) == Event(LocalDate.now(), "newDay", LocalDate.now(), Some(2)))
 //
-//    hashMap.updateEvent(new AtomicLong(3), Event(LocalDate.of(1755, 1, 25), "MSU"))
-//    assert(hashMap.hashMap.get(3) == Event(LocalDate.of(1755, 1, 25), "MSU", LocalDate.now(), Some(new AtomicLong(3))))
+//    hashMap.updateEvent(1, Event(LocalDate.of(1755, 1, 25), "MSU"))
+//    assert(hashMap.hashMap.get(3) == Event(LocalDate.of(1755, 1, 25), "MSU", LocalDate.now(), Some(3)))
 //
 //    assert(hashMap.hashMap.get(4) == null)
 //  }
