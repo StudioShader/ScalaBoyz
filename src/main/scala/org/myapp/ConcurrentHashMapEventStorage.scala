@@ -37,12 +37,10 @@ class ConcurrentHashMapEventStorage[F[_] : Sync] extends EventStorage[F] {
   }
 
   override def updateEvent(id: Int, event: Event): F[Unit] = Sync[F].pure {
-    if (id >= nextId) {
-      throw new NoSuchElementException("no element with such index")
-    }
 
     event.id = Some(id)
     hashMap.replace(id, hashMap.get(id), event)
 
   }
 }
+

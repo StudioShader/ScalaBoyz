@@ -8,7 +8,7 @@ import matchers.should._
 
 class Test extends funsuite.AnyFunSuite with Matchers {
   test("it runs") {
-    println("It runs")
+    println("It runs!")
   }
   val hashMap = new ConcurrentHashMapEventStorage[IO]
   hashMap.addEvent(Event(LocalDate.now(), "present"))
