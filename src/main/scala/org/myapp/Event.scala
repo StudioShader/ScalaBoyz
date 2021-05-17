@@ -2,7 +2,7 @@ package org.myapp
 
 import java.time.LocalDate
 
-case class Event(var date: LocalDate,
-                 var name: String,
-                 var notificationTime: LocalDate = LocalDate.now(),
-                 var id: Int) {}
+case class Event(date: LocalDate,
+                 name: String,
+                 notificationTime: LocalDate = LocalDate.now(),
+                 id: Option[Int] = None) {}

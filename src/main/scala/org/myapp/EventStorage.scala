@@ -1,14 +1,15 @@
 package org.myapp
 
 import java.time.LocalDate
-import scala.collection.immutable.Vector
+import java.util.concurrent.atomic.AtomicLong
 
 trait EventStorage[F[_]] {
 
-  def getEventsByDate(date: LocalDate): Vector[Event]
+  def getEventsByDate(date: LocalDate): F[List[Event]]
 
-  def addEvent(event: Event): Unit
+  def addEvent(event: Event): F[Unit]
 
-  def updateEvent(event: Event): Unit
+  def updateEvent(id: Int, event: Event): F[Unit]
+
 
 }
